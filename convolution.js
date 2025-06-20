@@ -872,6 +872,12 @@ function renderInputTensor3D(container) {
             window._state.input.selectedChannel = idx;
             renderAll();
         });
+    } else {
+        // Селектор каналов для обычного режима (без padding)
+        renderChannelSelector(selectorArea, channels, window._state.input.selectedChannel, (idx) => {
+            window._state.input.selectedChannel = idx;
+            renderAll();
+        });
     }
     
     container.appendChild(selectorArea);
@@ -993,8 +999,9 @@ function renderInputTensor3D(container) {
             layerDiv.style.pointerEvents = 'none';
             layerDiv.style.zIndex = c;
             
-            // Показываем все числа если включён padding
-            if (showPadding && c === window._state.input.selectedChannel) {
+            // Показываем все числа если включён padding или это выбранный канал в обычном режиме
+            if ((showPadding && c === window._state.input.selectedChannel) || 
+                (!showPadding && c === window._state.input.selectedChannel)) {
                 for (let i = 0; i < displayHeight; i++) {
                     for (let j = 0; j < displayWidth; j++) {
                         const origI = i - paddingSize;
