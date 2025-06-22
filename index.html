@@ -72,13 +72,13 @@
         <h2>Визуализация свёрточных нейронных сетей с 4D ядрами</h2>
         <p>Эта визуализация показывает, как работают свёрточные операции с 4D ядрами согласно формуле:</p>
         <div class="formula">
-            <strong>Y = <span style="display: inline-block; position: relative; margin: 0 0.2em;">∑<sub style="position: absolute; left: 50%; transform: translateX(-50%); bottom: -0.8em;">j=1</sub><sup style="position: absolute; left: 50%; transform: translateX(-50%); top: -0.8em;">d</sup></span> X<sub>j</sub> * K<sub>ij</sub> = convolve(X, K)</strong>
+            <strong>Y = <span style="display: inline-block; position: relative; margin: 0 0.2em;">∑<sub style="position: absolute; left: 50%; transform: translateX(-50%); bottom: -0.8em;">j=1</sub><sup style="position: absolute; left: 50%; transform: translateX(-50%); top: -0.8em;">d</sup></span> X<sub>j</sub> · K<sub>ij</sub> = convolve(X, K)</strong>
         </div>
         <p>Где:</p>
         <ul>
-            <li><strong>X ∈ ℝ<sup>d×h×w</sup></strong> - входной тензор (синий), d=входные каналы</li>
-            <li><strong>K ∈ ℝ<sup>c×d×p×p</sup></strong> - 4D ядро свёртки (оранжевый), c=выходные каналы, d=входные каналы</li>
-            <li><strong>Y ∈ ℝ<sup>c×h×w</sup></strong> - выходной тензор (красный), c=выходные каналы</li>
+            <li><strong>X ∈ ℝ<sup>d×h×w</sup></strong> – входной тензор (синий), d=входные каналы</li>
+            <li><strong>K ∈ ℝ<sup>c×d×p×p</sup></strong> – 4D ядро свёртки (оранжевый), c=выходные каналы, d=входные каналы</li>
+            <li><strong>Y ∈ ℝ<sup>c×h×w</sup></strong> – выходной тензор (красный), c=выходные каналы</li>
         </ul>
 
         <p><strong>Интерактивность:</strong></p>
@@ -108,7 +108,7 @@
             <small style="color: #666; margin-left: 10px;">Ядро всегда квадратное (k×k)</small>
         </div>
         <div>
-            <label>Количество выходных каналов:</label>
+            <label>Число выходных каналов:</label>
             <input type="number" id="outputChannels" value="3" min="1" max="8">
             <small style="color: #666; margin-left: 10px;">4D ядро: [выходные × входные × высота × ширина]</small>
         </div>
